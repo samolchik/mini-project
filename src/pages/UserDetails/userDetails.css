@@ -44,7 +44,7 @@ span {
     color: grey;
 }
 
-#button {
+#buttonPosts {
     margin-bottom: 55px;
     width: 65%;
     height: 50px;
@@ -60,7 +60,7 @@ span {
     cursor: pointer;
 }
 
-#button::before {
+#buttonPosts::before {
     content: '';
     display: block;
     width: 50px;
@@ -71,10 +71,10 @@ span {
     top: 0;
     filter: blur(25px);
     left: -100px;
-    animation: button 3500ms ease-in-out infinite;
+    animation: buttonPosts 3500ms ease-in-out infinite;
 }
 
-@keyframes button {
+@keyframes buttonPosts {
     0% {
         left: -100px;
     }
@@ -98,7 +98,7 @@ span {
 .post {
     padding: 10px;
     width: 18%;
-    max-height: 115px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -165,14 +165,20 @@ span {
         text-align: center;
     }
 
-    #button {
+    #buttonPosts {
         width: 90%;
         margin-bottom: 20px;
+        font-size: 16px;
     }
+
     .post {
         padding: 6px;
         width: 45%;
-        max-height: 100px;
+        height: 85px;
         font-size: 12px;
+    }
+
+    .btn-post {
+        font-size: 8px;
     }
 }

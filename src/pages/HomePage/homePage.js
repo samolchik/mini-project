@@ -1,12 +1,13 @@
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
+const users = new URL('https://jsonplaceholder.typicode.com/users');
+fetch(users)
+    .then(users => users.json())
     .then(users => {
 
-        const mainContainer = document.getElementById('mainContainer');
+        const usersContainer = document.getElementById('usersContainer');
 
         for (const user of users) {
 
-            const userItem = document.createElement('div');
+            const userItem = document.createElement('li');
             userItem.classList.add('user-item');
 
             const userInfo = document.createElement('div');
@@ -19,16 +20,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
             userInfo.append(userName, userId);
 
-            const button = document.createElement('div');
-            button.innerText = 'MORE DETAILS'
+            const btnUserDetails = document.createElement('div');
+            btnUserDetails.innerText = 'MORE DETAILS'
 
-            const link = document.createElement('a');
-            link.classList.add('btn-details');
-            link.target = '_blank';
-            link.href = '../../pages/UserDetails/user-details.html?data=' + JSON.stringify(user);
+            const linkUser = document.createElement('a');
+            linkUser.classList.add('btn-details');
+            linkUser.target = '_blank';
+            linkUser.href = '../../pages/UserDetails/user-details.html?data=' + JSON.stringify(user);
 
-            link.appendChild(button);
-            userItem.append(userInfo, link);
-            mainContainer.appendChild(userItem);
+            linkUser.appendChild(btnUserDetails);
+            userItem.append(userInfo, linkUser);
+            usersContainer.appendChild(userItem);
         }
     });
+

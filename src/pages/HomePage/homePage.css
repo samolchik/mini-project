@@ -1,5 +1,4 @@
 body {
-    margin: 0 auto;
     width: 100vw;
     height: 100vh;
     font-family: "Trirong", sans-serif;
@@ -7,8 +6,13 @@ body {
     background-image: url('../../assets/images/bg-home.jpg');
 }
 
+.mainContainer {
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
 .title-page {
-    margin-top: 10px;
     text-align: center;
     font-size: 40px;
     color: #475a89;
@@ -70,6 +74,7 @@ body {
     .user-item {
         margin-bottom: 10px;
         width: 90%;
+        height: 110px;
     }
 
     .title-page {
@@ -84,3 +89,4 @@ body {
         width: 45%;
     }
 }
+
